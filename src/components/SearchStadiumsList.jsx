@@ -43,7 +43,7 @@ export default class SearchStadiumsList extends Component {
           {this.state.filteredStadiums.map((stadium) => {
             return (
               <Link to={`/stadiums/${stadium.stadium_id}`}>
-                <div className="stadium-card" key={stadium.stadoum_id}>
+                <div className="stadium-card" key={stadium.stadium_id}>
                   <img
                     className="club-logo"
                     src={stadium.logo}

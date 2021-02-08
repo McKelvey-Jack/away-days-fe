@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import * as api from '../apiReq';
 import Load from './Load';
+import stadium from '../assets/stadium.svg';
+import beer from '../assets/beer.svg';
 
 let key = '';
 
 process.env.NODE_ENV === 'development'
   ? (key = process.env.REACT_APP_API_KEY)
-  : (key = process.env.API_KEY);
+  : (key = process.env.REACT_APP_PROD_API_KEY);
+
+console.log(process.env);
 
 export class PubsMap extends Component {
   state = {
@@ -73,8 +77,7 @@ export class PubsMap extends Component {
             onClick={this.onMarkerClick}
             name={this.props.stadiumName}
             icon={{
-              url:
-                'https://www.flaticon.com/svg/vstatic/svg/704/704892.svg?token=exp=1612784959~hmac=a1daa4903fe17ca1e3550bcd08ab5414',
+              url: stadium,
               anchor: new google.maps.Point(10, 10),
               scaledSize: new google.maps.Size(34, 34),
             }}
@@ -87,8 +90,7 @@ export class PubsMap extends Component {
                 onClick={this.onMarkerClick}
                 name={pub.name}
                 icon={{
-                  url:
-                    'https://www.flaticon.com/svg/vstatic/svg/931/931949.svg?token=exp=1612739584~hmac=727eceae2d8eace889e7f1e49a0a44d9',
+                  url: beer,
 
                   anchor: new google.maps.Point(10, 10),
                   scaledSize: new google.maps.Size(34, 34),

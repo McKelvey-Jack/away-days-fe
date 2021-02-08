@@ -33,7 +33,7 @@ export default class Comments extends Component {
       return <Load />;
     } else if (this.state.comments.length === 0) {
       return (
-        <div>
+        <div className={'comments-container'}>
           <PostComment id={this.props.id} addComment={this.addComment} />
         </div>
       );
@@ -46,7 +46,7 @@ export default class Comments extends Component {
       const PubsExt = arrayConvertor(this.state.comments, 'pubsNearGround');
 
       return (
-        <div className="comments-containter">
+        <div className="comments-container">
           <div className="ratings-container">
             <h4>Transport</h4>
             <StarRatings

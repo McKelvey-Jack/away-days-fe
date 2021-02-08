@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import * as api from "../apiReq";
-import Load from "./Load";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
-import commaNumber from "comma-number";
-import { Link } from "@reach/router";
-import { faUndoAlt } from "@fortawesome/free-solid-svg-icons";
-import ComingSoon from "./ComingSoon";
-import Error from "./Error";
+import React, { Component } from 'react';
+import * as api from '../apiReq';
+import Load from './Load';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import commaNumber from 'comma-number';
+import { Link } from '@reach/router';
+import { faUndoAlt } from '@fortawesome/free-solid-svg-icons';
+import ComingSoon from './ComingSoon';
+import Error from './Error';
 
 export default class StadiumsList extends Component {
   state = {
@@ -33,7 +33,7 @@ export default class StadiumsList extends Component {
   }
 
   render() {
-    if (this.props.country === "spain" || this.props.country === "france") {
+    if (this.props.country === 'spain' || this.props.country === 'france') {
       return <ComingSoon />;
     }
     if (this.state.isLoading) {
@@ -42,23 +42,25 @@ export default class StadiumsList extends Component {
       return <Error />;
     } else {
       return (
-        <div className={"stadiums-list-page-container"}>
+        <div className={'stadiums-list-page-container'}>
           <button
             onClick={() => this.goBack()}
-            className={"individual-stadium-home-button"}
+            className={'individual-stadium-home-button'}
           >
             <FontAwesomeIcon className="button-icon" icon={faUndoAlt} />
           </button>
-          <h1 className={"stadiums-list-header"}>
-            Stadiums in {this.props.country}{" "}
+          <h1 className={'stadiums-list-header'}>
+            Stadiums in {this.props.country}{' '}
           </h1>
           <div className="stadiums-list-country">
             {this.state.stadiums.map((stadium) => {
               return (
-                <Link to={`/stadiums/${stadium.stadium_id}`}>
+                <Link
+                  to={`/stadiums/${stadium.stadium_id}`}
+                  key={stadium.stadium_id}
+                >
                   <div
                     className="country-stadium-card"
-                    key={stadium.stadium_id}
                     style={{
                       backgroundImage: `url(${stadium.picture})`,
                     }}
@@ -72,7 +74,7 @@ export default class StadiumsList extends Component {
                       <p className="country-stadium-name">{stadium.name}</p>
                     </div>
                     <p className="stadium-capacity">
-                      <FontAwesomeIcon icon={faUsers} />{" "}
+                      <FontAwesomeIcon icon={faUsers} />{' '}
                       {commaNumber(stadium.capacity)}
                     </p>
                   </div>
