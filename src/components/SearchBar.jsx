@@ -1,15 +1,14 @@
-import React, { Component } from "react";
-import SearchStadiumsList from "./SearchStadiumsList";
-
+import React, { Component } from 'react';
+import SearchStadiumsList from './SearchStadiumsList';
 
 export default class SearchBar extends Component {
   state = {
-    stadium: "",
+    stadium: '',
   };
 
   handleChange = (e) => {
-this.setState({stadium: e.target.value}) 
-  }
+    this.setState({ stadium: e.target.value });
+  };
 
   render() {
     return (
@@ -23,7 +22,9 @@ this.setState({stadium: e.target.value})
             value={this.state.stadium}
           />
         </form>
-        {this.state.stadium.length >=2 ? <SearchStadiumsList searchValue={this.state.stadium}/> : null}
+        {this.state.stadium.length >= 2 ? (
+          <SearchStadiumsList searchValue={this.state.stadium} />
+        ) : null}
       </div>
     );
   }

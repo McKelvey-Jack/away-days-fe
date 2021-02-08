@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-decoration: none;
   outline: none;
 }
@@ -20,7 +20,7 @@ body {
 .hero {
   min-height: 100vh;
   background-size: cover;
-  background-image: url("./assets/background.jpeg");
+  background-image: url('./assets/background.jpeg');
   text-align: center;
   display: flex;
   align-items: center;
@@ -155,9 +155,6 @@ body {
     width: 3em;
     height: 3em;
   }
-  .hero-title {
-    font-size: 6em;
-  }
 }
 
 @media screen and (max-width: 681px) {
@@ -170,6 +167,13 @@ body {
   .club-logo {
     width: 3em;
     height: 3em;
+  }
+  .hero-title {
+    font-size: 5em;
+  }
+  .search-box {
+    font-size: 16px;
+    margin-top: 6px;
   }
 }
 
@@ -189,7 +193,7 @@ body {
 /* Stadiums List */
 
 .stadiums-list-page-container {
-  background-image: url("./assets/footballgrass.jpeg");
+  background-image: url('./assets/footballgrass.jpeg');
 }
 
 .stadiums-list-country {
@@ -365,7 +369,7 @@ body {
 }
 
 .individual-stadium-picture-container {
-  background-image: url("https://www.stadiumguide.com/wp-content/uploads/villapark_front.jpg");
+  background-image: url('https://www.stadiumguide.com/wp-content/uploads/villapark_front.jpg');
   background-size: cover;
   height: 70vh;
   font-size: 0.9em;
@@ -566,7 +570,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("./assets/footballgrass.jpeg");
+  background-image: url('./assets/footballgrass.jpeg');
   height: 100vh;
   color: #ffffff;
   padding-top: 1em;

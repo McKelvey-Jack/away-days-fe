@@ -19,9 +19,14 @@ export default class SearchStadiumsList extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.searchValue !== this.props.searchValue) {
       const filteredStadiums = this.state.stadiums.filter((stadium) => {
+        // return stadium.name === this.props.searchValue;
         return (
-          stadium.club.includes(this.props.searchValue) ||
-          stadium.name.includes(this.props.searchValue)
+          stadium.club
+            .toLowerCase()
+            .includes(this.props.searchValue.toLowerCase()) ||
+          stadium.name
+            .toLowerCase()
+            .includes(this.props.searchValue.toLowerCase())
         );
       });
 
@@ -45,6 +50,7 @@ export default class SearchStadiumsList extends Component {
                     alt="club logo"
                   />
                   <div className="club-container">
+                    {console.log(stadium.name)}
                     <p className="stadium-name">{stadium.name}</p>
                     <p className="stadium-club">{stadium.club}</p>
                   </div>
