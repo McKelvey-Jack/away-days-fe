@@ -83,7 +83,7 @@ export default class Comments extends Component {
             <PostComment id={this.props.id} addComment={this.addComment} />
             {this.state.comments.map((comment) => {
               return (
-                <div className="comment-card">
+                <div className="comment-card" key={comment.comment_id}>
                   <p className="comment">{comment.thoughts}</p>
                   <div className="ratings">
                     <p className="comment-ratings">

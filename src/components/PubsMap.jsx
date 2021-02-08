@@ -3,7 +3,13 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import * as api from '../apiReq';
 import Load from './Load';
 
-const key = process.env.API_KEY;
+let key = '';
+
+process.env.NODE_ENV === 'development'
+  ? (key = process.env.REACT_APP_API_KEY)
+  : (key = process.env.API_KEY);
+
+console.log(process.env);
 
 export class PubsMap extends Component {
   state = {
