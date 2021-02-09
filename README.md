@@ -7,13 +7,9 @@ Away days is a stadium tracker. A full stack project with a custom built API in 
 
 It is fully responsive and can work on all platforms. 
 
-Link to hosted site:
-Link to backend repo: 
+Link to hosted site: https://away-days.netlify.app/
+Link to backend repo: https://github.com/McKelvey-Jack/away-days
 
-## To run on your machine 
-1. Clone repo
-2. npm install
-4. In the project terminal run the command expo start
 
 # Features
 
